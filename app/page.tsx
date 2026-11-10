@@ -2,6 +2,7 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Ad from "@/components/Ad";
 import PremierLeagueTable from "@/components/PremierLeagueTable";
+import UnitedTransfers from "@/components/UnitedTransfers";
 import {supabase} from "@/lib/supabase";
 import {samples,type Post,cleanPost} from "@/lib/posts";
 
@@ -23,8 +24,8 @@ export default async function Home(){
   return <><Header/><main>
     <section className="masthead"><div className="masthead-inner"><div className="masthead-kicker">THE HOME OF THE REDS</div><h1>MANCHESTER<br/><span>UNITED</span></h1><div className="masthead-sub">NEWS • MATCHES • TRANSFERS • ANALYSIS</div></div></section>
     <div className="wrap"><Ad label="TOP BANNER ADVERTISEMENT"/>
-      <section className="video-promo"><div><div className="masthead-kicker">OFFICIAL CLUB FOOTAGE</div><h2>UNITED VIDEO ZONE</h2><p>Watch 2026 training sessions, goals and moments from the Reds — embedded from the club’s verified YouTube channel.</p></div><Link href="/videos" className="video-cta">WATCH VIDEOS ↗</Link></section>
       <PremierLeagueTable/>
+      <UnitedTransfers/>
       <section id="news"><div className="sectionhead"><div><h2>Latest stories</h2><p>Fresh updates from around Old Trafford</p></div><span className="tag">RED DEVILS NEWSROOM</span></div><div className="grid">{posts.map((post,i)=><Story key={post.id} post={post} index={i}/>)}</div></section>
       <div id="analysis"><Ad label="IN-FEED ADVERTISEMENT"/></div>
     </div></main>
