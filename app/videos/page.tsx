@@ -53,14 +53,12 @@ export default function VideosPage() {
                 <div className="video-meta"><span className="tag">{video.category}</span><span>{video.date}</span></div>
                 <h2>{video.title}</h2>
                 <p>{video.description}</p>
-                <a className="youtube-link" href={`https://www.youtube.com/watch?v=${video.id}`} target="_blank" rel="noreferrer">WATCH ON YOUTUBE ↗</a>
               </div>
             </article>
           ))}
         </div>
         <div className="video-footnote">
           Videos are embedded from Manchester United’s verified YouTube channel. All video rights remain with the club and their respective owners.
-          <a href="https://www.youtube.com/@manutd" target="_blank" rel="noreferrer"> Visit the official channel ↗</a>
         </div>
         <div className="back-home"><Link href="/">← BACK TO LATEST NEWS</Link></div>
       </main>
