@@ -23,3 +23,11 @@
 .video-footnote a{color:#ff6476;font-weight:800;margin-left:5px}
 .back-home{margin:25px 0 45px;font-size:11px;font-weight:900;color:#ff6476}
 @media(max-width:740px){.video-promo{align-items:flex-start;flex-direction:column;padding:22px}.video-grid{grid-template-columns:1fr}.videos-hero{padding:34px 16px}.nav{gap:10px;font-size:9px}.nav a:nth-child(2){display:none}}
+
+/* Responsive YouTube player inside article pages */
+.article-video{margin:34px 0 12px;padding:20px;border:1px solid var(--line);border-radius:14px;background:var(--panel)}
+.article-video-heading{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.article-video-heading h2{font-size:20px;letter-spacing:-.03em;margin:0}
+.article-video-frame{width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:10px;background:#000}
+.article-video-frame iframe{display:block;width:100%;height:100%;border:0}
+@media(max-width:600px){.article-video{padding:12px;margin:26px 0}.article-video-heading h2{font-size:17px}}
