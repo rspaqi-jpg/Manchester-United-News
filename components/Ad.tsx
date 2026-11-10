@@ -1,0 +1,1 @@
+export default function Ad({label="ADVERTISEMENT",code}:{label?:string;code?:string|null}){return <div className="ad">{code?<div dangerouslySetInnerHTML={{__html:code}}/>:label}</div>}
