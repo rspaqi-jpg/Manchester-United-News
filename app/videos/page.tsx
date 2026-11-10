@@ -44,8 +44,9 @@ export default function VideosPage() {
                   src={`https://www.youtube-nocookie.com/embed/${video.id}?modestbranding=1&rel=0`}
                   title={video.title}
                   loading="lazy"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
                   referrerPolicy="strict-origin-when-cross-origin"
+                  sandbox="allow-scripts allow-same-origin allow-presentation"
                   allowFullScreen
                 />
               </div>
