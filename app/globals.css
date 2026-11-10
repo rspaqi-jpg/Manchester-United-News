@@ -51,3 +51,69 @@
 .league-team-logo{width:19px;height:19px;object-fit:contain;display:inline-block;vertical-align:middle;margin-right:8px}
 .league-updated{margin:9px 2px 0;color:#818895;font-size:10px}
 .league-status{text-align:center!important;padding:24px!important;color:#9da4af!important}
+
+/* Premium Premier League standings and United transfer centre */
+.league-section{margin:36px 0 48px;background:#101216;border:1px solid #2b3039;border-radius:16px;overflow:hidden;padding:22px}
+.league-topline{display:flex;align-items:center;justify-content:space-between;color:#929aa7;font-size:9px;font-weight:900;letter-spacing:.18em}
+.live-pill{display:inline-flex;align-items:center;gap:7px;padding:6px 10px;border:1px solid #285d43;border-radius:20px;color:#79d5a0;font-size:9px;font-weight:900;letter-spacing:.1em;white-space:nowrap}
+.live-pill i{width:6px;height:6px;background:#3bd47e;border-radius:50%;box-shadow:0 0 10px #3bd47e;display:inline-block}
+.league-title-row{display:flex;align-items:center;justify-content:space-between;margin:15px 0 20px}
+.league-title-row h2{font-size:clamp(27px,4vw,38px);letter-spacing:-.055em;margin:0}
+.league-title-row p{font-size:12px;color:#8f97a4;margin:5px 0 0}
+.league-mark{font-size:27px;font-weight:1000;font-style:italic;color:#d7e0e8;border:2px solid #d7e0e8;padding:4px 10px;transform:skew(-8deg);letter-spacing:-.12em}
+.league-table-wrap{overflow-x:auto;border:1px solid #292e38;border-radius:10px;background:#0c0e12}
+.league-table{width:100%;border-collapse:collapse;min-width:760px;font-size:11px;font-variant-numeric:tabular-nums}
+.league-table th{padding:13px 9px;text-align:center;color:#858e9b;background:#181c23;font-size:9px;letter-spacing:.1em;font-weight:900;white-space:nowrap}
+.league-table th.club-col{text-align:left;padding-left:16px}
+.league-table td{padding:10px 9px;text-align:center;border-top:1px solid #20242c;color:#b9c0ca;white-space:nowrap}
+.league-table tbody tr:hover{background:#ffffff08}
+.league-table .league-team{text-align:left;display:table-cell;font-weight:700;color:#edf0f4;padding-left:16px}
+.league-team-logo{width:19px;height:19px;object-fit:contain;vertical-align:middle;margin-right:9px}
+.team-placeholder{width:19px;height:19px;display:inline-grid;place-items:center;margin-right:9px;border-radius:50%;background:#333a45;color:#fff;font-size:10px}
+.league-table .league-points{font-weight:1000;color:#fff;font-size:12px}
+.league-table .position-cell{width:48px;color:#a4acb8;font-weight:800}
+.league-table .position-cell span{display:inline-block;min-width:23px}
+.league-table .ucl-zone .position-cell{border-left:3px solid #35a5e7}
+.league-table .relegation-zone .position-cell{border-left:3px solid #e34c58}
+.league-table .man-united-row{background:linear-gradient(90deg,#c8102e25,#c8102e09)}
+.league-table .man-united-row .position-cell{border-left:3px solid #e21c3d}
+.league-table .man-united-row .league-team{color:#ff657b}
+.gd-cell{color:#e1e5eb!important;font-weight:700}
+.form-dots{display:inline-flex;gap:3px}
+.form-dots i{font-style:normal;width:17px;height:17px;border-radius:3px;display:grid;place-items:center;font-size:8px;font-weight:900;color:#fff}
+.form-dots .win{background:#168653}.form-dots .draw{background:#6b7280}.form-dots .loss{background:#c23a48}
+.form-empty{color:#5f6672}
+.league-legend{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:13px;color:#818a98;font-size:9px}
+.league-legend span{display:inline-flex;align-items:center;gap:6px}
+.legend-ucl,.legend-relegation{width:7px;height:7px;border-radius:2px;background:#35a5e7}.legend-relegation{background:#e34c58}
+.league-legend .league-updated{margin-left:auto;font-size:9px}
+.league-status{text-align:center!important;padding:24px!important;color:#9da4af!important}
+.transfers-section{margin:42px 0 52px;padding:24px;border:1px solid #2b3039;border-radius:16px;background:linear-gradient(140deg,#15171d,#0e1014 70%)}
+.transfer-heading{display:flex;justify-content:space-between;align-items:flex-start;gap:15px}
+.transfer-kicker{font-size:9px;font-weight:900;letter-spacing:.18em;color:#ff8796}
+.transfer-heading h2{font-size:clamp(24px,4vw,34px);letter-spacing:-.05em;margin:8px 0 5px}
+.transfer-heading p{margin:0;color:#9098a5;font-size:12px}
+.transfer-tabs{display:flex;gap:7px;margin:22px 0 0;border-bottom:1px solid #2b3039}
+.transfer-tabs button{border:0;background:transparent;color:#929aa7;padding:12px 15px;font-size:10px;font-weight:900;letter-spacing:.1em;cursor:pointer;border-bottom:2px solid transparent}
+.transfer-tabs button.active{color:#fff;border-bottom-color:#d71932}
+.transfer-tabs b{margin-left:6px;color:#ff8a99}
+.transfer-table-wrap{overflow-x:auto}
+.transfer-table{width:100%;border-collapse:collapse;min-width:470px;font-size:12px}
+.transfer-table th{text-align:left;padding:12px 10px;color:#78818e;font-size:9px;letter-spacing:.12em;background:#11141a}
+.transfer-table td{padding:11px 10px;border-top:1px solid #252a33;color:#b8c0cb}
+.transfer-table td strong{color:#f1f3f6}
+.deal-tag{display:inline-block;padding:4px 7px;border-radius:4px;background:#242a33;color:#c7cfda;font-size:9px;font-weight:800}
+.transfer-source{margin-top:12px;color:#707987;font-size:9px}
+.transfer-news{margin-top:26px;border-top:1px solid #2b3039;padding-top:21px}
+.transfer-news-title{display:flex;align-items:end;justify-content:space-between;gap:12px;margin-bottom:10px}
+.transfer-news-title h3{font-size:19px;margin:5px 0 0;letter-spacing:-.03em}
+.feed-refresh{color:#798391;font-size:9px;font-weight:900;letter-spacing:.1em}
+.transfer-news-list{display:grid;grid-template-columns:1fr 1fr;gap:0 20px}
+.transfer-news-item{display:flex;align-items:center;gap:12px;padding:13px 0;border-bottom:1px solid #252a33}
+.news-number{font-size:10px;color:#ff7183;font-weight:900}
+.news-copy{display:grid;gap:5px;min-width:0}
+.news-copy strong{font-size:11px;line-height:1.45;color:#e0e4ea}
+.news-copy small{font-size:9px;color:#7e8794}
+.news-arrow{margin-left:auto;color:#ff7183}
+.feed-empty,.transfer-disclaimer{font-size:10px;color:#7f8895;line-height:1.6}
+@media(max-width:700px){.league-section,.transfers-section{padding:15px;margin:25px 0 34px}.league-legend .league-updated{margin-left:0;width:100%}.transfer-heading{flex-direction:column}.transfer-news-list{grid-template-columns:1fr}.transfer-news-title{align-items:flex-start;flex-direction:column}.transfer-tabs button{padding:12px 9px;font-size:9px}}
