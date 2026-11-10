@@ -41,7 +41,7 @@ export default function VideosPage() {
             <article className="video-card" key={video.id}>
               <div className="video-frame">
                 <iframe
-                  src={`https://www.youtube-nocookie.com/embed/${video.id}`}
+                  src={`https://www.youtube-nocookie.com/embed/${video.id}?modestbranding=1&rel=0`}
                   title={video.title}
                   loading="lazy"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
