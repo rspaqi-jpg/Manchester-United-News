@@ -7,7 +7,7 @@ import {samples,type Post,cleanPost} from "@/lib/posts";
 async function loadPosts(){
   if(!supabase)return samples;
   const {data,error}=await supabase.from("posts").select("id,title,excerpt,content,image_url,created_at,category,ad_code,published").eq("published",true).order("created_at",{ascending:false}).limit(30);
-  if(error||!data?.length)return samples;const latest=(data as Post[]).map(cleanPost);const extra=samples.filter(post=>post.id==="united-pochettino-agreement-in-principle"&&!latest.some(item=>item.id===post.id));return [...latest,...extra];
+  if(error||!data?.length)return samples;const latest=(data as Post[]).map(cleanPost);const extra=samples.filter(post=>["united-pochettino-agreement-in-principle","maguire-back-spasm-liverpool-fitness","rashford-targeted-liverpool-return","luke-shaw-liverpool-return-target"].includes(post.id)&&!latest.some(item=>item.id===post.id));return [...latest,...extra];
 }
 
 function Story({post,index}:{post:Post;index:number}){
