@@ -2,12 +2,12 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Ad from "@/components/Ad";
 import {supabase} from "@/lib/supabase";
-import {samples,type Post,cleanPost} from "@/lib/posts";
+import {samples,type Post,cleanPost,isMensSeniorPost} from "@/lib/posts";
 
 async function loadPosts(){
   if(!supabase)return samples;
   const {data,error}=await supabase.from("posts").select("id,title,excerpt,content,image_url,created_at,category,ad_code,published").eq("published",true).order("created_at",{ascending:false}).limit(30);
-  if(error||!data?.length)return samples;const latest=(data as Post[]).map(cleanPost);const extra=samples.filter(post=>["united-pochettino-agreement-in-principle","maguire-back-spasm-liverpool-fitness","rashford-targeted-liverpool-return","luke-shaw-liverpool-return-target"].includes(post.id)&&!latest.some(item=>item.id===post.id));return [...latest,...extra];
+  if(error||!data?.length)return samples.filter(isMensSeniorPost);const latest=(data as Post[]).map(cleanPost).filter(isMensSeniorPost);const extra=samples.filter(post=>["united-pochettino-agreement-in-principle","maguire-back-spasm-liverpool-fitness","rashford-targeted-liverpool-return","luke-shaw-liverpool-return-target"].includes(post.id)&&!latest.some(item=>item.id===post.id));return [...latest,...extra];
 }
 
 function Story({post,index}:{post:Post;index:number}){
@@ -20,6 +20,7 @@ function Story({post,index}:{post:Post;index:number}){
 export default async function Home(){
   const posts=(await loadPosts())
     .map(post=>post.category?.toUpperCase().includes("ANALYSIS")?{...post,category:"NEWS"}:post)
+    .filter(isMensSeniorPost)
     .sort((a,b)=>new Date(b.created_at).getTime()-new Date(a.created_at).getTime());
   return <><Header/><main>
     <section className="masthead"><div className="masthead-inner"><div className="masthead-kicker">THE HOME OF THE REDS</div><h1>MANCHESTER<br/><span>UNITED</span></h1><div className="masthead-sub">NEWS • MATCHES • TRANSFERS • ANALYSIS</div></div></section>
