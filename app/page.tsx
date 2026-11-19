@@ -4,11 +4,12 @@ import Ad from "@/components/Ad";
 import {supabase} from "@/lib/supabase";
 import {samples,type Post,cleanPost,isMensSeniorPost} from "@/lib/posts";
 import {brunoFernandesStory} from "@/lib/bruno-fernandes-story";
+import {pochettinoLiverpoolStory} from "@/lib/pochettino-liverpool-story";
 
 async function loadPosts(){
-  if(!supabase)return [...samples, brunoFernandesStory as Post];
+  if(!supabase)return [...samples, brunoFernandesStory as Post, pochettinoLiverpoolStory as Post];
   const {data,error}=await supabase.from("posts").select("id,title,excerpt,content,image_url,created_at,category,ad_code,published").eq("published",true).order("created_at",{ascending:false}).limit(30);
-  if(error||!data?.length)return samples.filter(isMensSeniorPost);const latest=(data as Post[]).map(cleanPost).filter(isMensSeniorPost);const extra=samples.filter(post=>["united-pochettino-agreement-in-principle","maguire-back-spasm-liverpool-fitness","rashford-targeted-liverpool-return","luke-shaw-liverpool-return-target"].includes(post.id)&&!latest.some(item=>item.id===post.id));return [...latest, brunoFernandesStory as Post, ...extra];
+  if(error||!data?.length)return samples.filter(isMensSeniorPost);const latest=(data as Post[]).map(cleanPost).filter(isMensSeniorPost);const extra=samples.filter(post=>["united-pochettino-agreement-in-principle","maguire-back-spasm-liverpool-fitness","rashford-targeted-liverpool-return","luke-shaw-liverpool-return-target"].includes(post.id)&&!latest.some(item=>item.id===post.id));return [...latest, pochettinoLiverpoolStory as Post, brunoFernandesStory as Post, ...extra];
 }
 
 function Story({post,index}:{post:Post;index:number}){
