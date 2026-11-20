@@ -8,9 +8,12 @@ import { supabase } from "@/lib/supabase";
 import { samples, type Post, cleanPost, isMensSeniorPost } from "@/lib/posts";
 import { brunoFernandesStory } from "@/lib/bruno-fernandes-story";
 import { pochettinoLiverpoolStory } from "@/lib/pochettino-liverpool-story";
+import { pochettinoDroneStory } from "@/lib/pochettino-drone-story";
+import { pochettinoPredictedXiStory } from "@/lib/pochettino-predicted-xi-story";
+import { pochettinoJanuaryTargetsStory } from "@/lib/pochettino-january-targets-story";
 
 async function getPost(id: string): Promise<Post | undefined> {
-  let post: Post | undefined = [...samples, brunoFernandesStory as Post, pochettinoLiverpoolStory as Post].find((item) => item.id === id);
+  let post: Post | undefined = [...samples, brunoFernandesStory as Post, pochettinoLiverpoolStory as Post, pochettinoDroneStory as Post, pochettinoPredictedXiStory as Post, pochettinoJanuaryTargetsStory as Post].find((item) => item.id === id);
   if (supabase) {
     const { data } = await supabase.from("posts").select("id,title,excerpt,content,image_url,created_at,category,ad_code,youtube_video,published").eq("id", id).eq("published", true).maybeSingle();
     if (data) post = cleanPost(data as Post);
