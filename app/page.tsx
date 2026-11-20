@@ -26,7 +26,7 @@ export default async function Home(){
     .sort((a,b)=>new Date(b.created_at).getTime()-new Date(a.created_at).getTime());
   return <><Header/><main>
     <section className="masthead"><div className="masthead-inner"><div className="masthead-kicker">THE HOME OF THE REDS</div><h1>MANCHESTER<br/><span>UNITED</span></h1><div className="masthead-sub">NEWS • MATCHES • TRANSFERS • ANALYSIS</div></div></section>
-    <div className="wrap"><Ad label="TOP BANNER ADVERTISEMENT"/>
+    <div className="wrap"><Ad placement="article-mid" label="TOP BANNER ADVERTISEMENT"/>
       <div className="home-links"><Link href="/transfers">MANCHESTER UNITED TRANSFERS <span>→</span></Link><Link href="/prltable">PREMIER LEAGUE TOP SIX &amp; LIVE TABLE <span>→</span></Link></div>
       <section id="news"><div className="sectionhead"><div><h2>News</h2><p>All Manchester United stories, match reports and analysis in one newsroom</p></div><span className="tag">RED DEVILS NEWSROOM</span></div><div className="grid">{posts.map((post,i)=><Story key={post.id} post={post} index={i}/>)}</div></section>
     </div></main>
