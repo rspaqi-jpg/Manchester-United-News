@@ -3,11 +3,14 @@ import { supabase } from "@/lib/supabase";
 import { samples, type Post } from "@/lib/posts";
 import { brunoFernandesStory } from "@/lib/bruno-fernandes-story";
 import { pochettinoLiverpoolStory } from "@/lib/pochettino-liverpool-story";
+import { pochettinoDroneStory } from "@/lib/pochettino-drone-story";
+import { pochettinoPredictedXiStory } from "@/lib/pochettino-predicted-xi-story";
+import { pochettinoJanuaryTargetsStory } from "@/lib/pochettino-january-targets-story";
 
 const baseUrl = "https://manunitednews.blog";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const staticPosts = [...samples, brunoFernandesStory as Post, pochettinoLiverpoolStory as Post];
+  const staticPosts = [...samples, brunoFernandesStory as Post, pochettinoLiverpoolStory as Post, pochettinoDroneStory as Post, pochettinoPredictedXiStory as Post, pochettinoJanuaryTargetsStory as Post];
   let posts = staticPosts;
   if (supabase) {
     const { data } = await supabase.from("posts").select("id,created_at,published").eq("published", true).order("created_at", { ascending: false }).limit(1000);
