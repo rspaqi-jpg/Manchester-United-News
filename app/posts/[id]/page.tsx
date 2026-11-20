@@ -60,8 +60,8 @@ export default async function PostPage({ params }: { params: Promise<{ id: strin
     <h1>{post.title}</h1><p className="lead">{post.excerpt}</p>
     <div className="date">{new Date(post.created_at).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })}</div>
     {post.image_url ? <img className="articleimg" src={post.image_url} alt={post.title} /> : <div className="placeholder articleimg">UNITED</div>}
-    <div className="content">{paragraphs.map((paragraph, index) => <span key={index}><p>{paragraph}</p>{index === 1 ? <Ad label="IN-ARTICLE ADVERTISEMENT" /> : null}</span>)}</div>
-    <Ad label="ADVERTISEMENT" />
+    <div className="content">{paragraphs.map((paragraph, index) => <span key={index}><p>{paragraph}</p>{index === 1 ? <Ad placement="article-mid" label="IN-ARTICLE ADVERTISEMENT" /> : null}</span>)}</div>
+    <Ad placement="article-end" label="ADVERTISEMENT" />
     <ShareButtons title={post.title} url={articleUrl}/>
     {youtubeId ? <section className="article-video" aria-label="Article video"><div className="article-video-heading"><span className="tag">WATCH VIDEO</span><h2>Inside the story</h2></div><div className="article-video-frame"><iframe src={`https://www.youtube-nocookie.com/embed/${youtubeId}?rel=0&modestbranding=1`} title={`${post.title} – Manchester United video`} loading="lazy" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" sandbox="allow-scripts allow-same-origin allow-presentation" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen /></div></section> : null}
     <p><Link href="/">← BACK TO LATEST NEWS</Link></p>
