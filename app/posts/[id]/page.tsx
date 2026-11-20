@@ -41,7 +41,7 @@ function getYouTubeId(value?: string | null) {
     if (url.hostname === "youtu.be") return url.pathname.slice(1).split("/")[0] || null;
     if (["youtube.com", "www.youtube.com", "m.youtube.com", "youtube-nocookie.com", "www.youtube-nocookie.com"].includes(url.hostname)) {
       if (url.pathname === "/watch") return url.searchParams.get("v");
-      const match = url.pathname.match(/^\\/(?:embed|shorts|live)\\/([a-zA-Z0-9_-]{11})/);
+      const match = url.pathname.match(/^\/(?:embed|shorts|live)\/([a-zA-Z0-9_-]{11})/);
       return match?.[1] || null;
     }
   } catch {}
@@ -53,7 +53,7 @@ export default async function PostPage({ params }: { params: Promise<{ id: strin
   const post = await getPost(id);
   if (!post) notFound();
   const youtubeId = getYouTubeId(post.youtube_video);
-  const paragraphs = post.content.split(/\\n\\n+/).filter(Boolean);
+  const paragraphs = post.content.split(/\n\n+/).filter(Boolean);
   const articleUrl = `https://manunitednews.blog/posts/${post.id}`;
   return <><Header/><main className="wrap"><article className="article">
     <div className="tag">{post.category || "MANCHESTER UNITED"}</div>
